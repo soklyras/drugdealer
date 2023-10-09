@@ -47,6 +47,9 @@ def  run_dataprocess(params: dict,
     gene_expressions = pd.read_csv(path_gene_expression)
     gene_expressions = gene_expressions.rename(columns={'Unnamed: 0': 'cell_line'})
     
+    if not os.path.exists(processed_dir):
+        os.mkdir(processed_dir)
+
     # Convert columns to float32 based on the specified mapping
     dtype_mapping = {col: 'float32' for col in gene_expressions.columns if col != 'cell_line'}
     gene_expressions = gene_expressions.astype(dtype_mapping)

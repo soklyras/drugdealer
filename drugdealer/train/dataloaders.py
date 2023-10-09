@@ -31,7 +31,7 @@ def prepare_data(params,
     train_dataset = Dataset(training_data, train_params['batch_size'])
     train_loader = data_loader(train_dataset, train_params)
 
-    validation_data = read_pickle(validation_set_path)      
+    validation_data = list(read_pickle(validation_set_path).values())      
     val_params = params['data_params']['validation']
     validation_dataset = Dataset(validation_data, val_params['batch_size'])
     validation_loader = data_loader(validation_dataset, val_params)

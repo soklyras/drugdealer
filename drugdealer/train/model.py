@@ -84,7 +84,7 @@ class LightDrug(pl.LightningModule):
         self.log('train_loss', train_loss, prog_bar=True, on_epoch=True, on_step=False)
         return train_loss
     
-    def validation_step(self, batch):
+    def validation_step(self, batch, idx):
         """Implements training step
 
         Args:
