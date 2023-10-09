@@ -1,0 +1,48 @@
+# Paths
+paths:
+  root_dir: '/home/sokratis/neuroelectircs/repos/intelligencia'
+  data_dir: '/home/sokratis/neuroelectrics/repos/intelligencia/resources/data_files'
+  processed_dir: '/home/sokratis/neuroelectrics/repos/intelligencia/resources/processed_data'
+  genes: '2128_genes.pkl'
+  smiles: 'drug_structure.smi'
+  gene_expressions: 'gene_expression.csv'
+  train: 'train.csv'
+  test: 'test.csv'
+  cell_lines: 'Cell_lines_infos.csv'
+  model_name: 'test'
+  train_dict: 'X_train.pkl'
+  test_dict: 'X_test.pkl'
+  val_dict: 'X_val.pkl'
+  train_labels: 'y_train'
+  test_labels: 'y_test'
+
+# Dataloader parameters
+data_params:
+  train:
+     batch_size: 32
+     shuffle: True 
+     num_workers: 1
+     pin_memory: True
+  validation:
+     batch_size: 32
+     shuffle: False
+     num_workers: 1
+
+# Optimization parameters
+optim_params:
+  device: 'gpu'
+  epochs: 20
+
+callbacks:
+  EarlyStopping:
+    monitor: 'val_loss'
+    min_delta: 0
+    patience: 4
+    
+optimizer_params:
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  eps: 0.00001
+  weight_decay: 0.0001
+  amsgrad: False
+    
