@@ -36,6 +36,7 @@ C) Featurizes smiles into images using this paper: [1] Goh, Garrett B., et al. "
         Discovery & Data Mining. 2018. <br />
    An example using a random smile is the following: <br />
    ![Alt Text](resources/figures/molecular_structure.png)
-3) **train**: For execution run `drugdealer train config_file.yml` <br />
-This step train a DL model to predict the ic50 values. It has 2 layers, one to process the images and one to process the gene_expressions. Then the extracted features are fused and passed into an FC layer where they are project into one dimension for MSE calculation. 
+2) **train**: For execution run `drugdealer train config_file.yml` <br />
+This step train a DL model to predict the ic50 values. It has 2 layers, one to process the images and one to process the gene_expressions. Then the extracted features are fused and passed into an FC layer where they are project into one dimension for MSE calculation.
+3) Unfortunately there was no time to implement the validation step. 
 
